@@ -1,0 +1,21 @@
+11:07:28 **** Build of configuration Debug for project vga_app ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: vga_app.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "vga_app.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vga_app.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vga_app.elf  |tee "vga_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24740	   1152	 636980	 662872	  a1d58	vga_app.elf
+'Finished building: vga_app.elf.size'
+' '
+
+11:07:28 Build Finished (took 587ms)
+

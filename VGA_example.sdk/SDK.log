@@ -1,0 +1,141 @@
+20:17:48 INFO  : Launching XSDB server: xsdb -n /opt/Xilinx/SDK/2015.3/scripts/xsdb/xsdb/xsdb-server.tcl
+20:17:58 INFO  : XSDB server has started successfully.
+20:18:01 INFO  : Processing command line option -hwspec /opt/Xilinx/Projects/VGA_example/VGA_example.sdk/BoardDesign_0_wrapper.hdf.
+20:25:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:25:47 INFO  : Sourcing of '/opt/Xilinx/Projects/VGA_example/VGA_example.sdk/BoardDesign_0_wrapper_hw_platform_0/ps7_init.tcl' is done.
+20:25:47 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279759071A"} -index 0' command is executed.
+20:25:47 INFO  : System reset is completed.
+20:25:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279759071A" && level==0} -index 1' command is executed.
+20:25:52 INFO  : FPGA configured successfully with bitstream "/opt/Xilinx/Projects/VGA_example/VGA_example.sdk/BoardDesign_0_wrapper_hw_platform_0/BoardDesign_0_wrapper.bit"
+20:25:52 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279759071A"} -index 0' command is executed.
+20:25:52 INFO  : Hardware design information is loaded from '/opt/Xilinx/Projects/VGA_example/VGA_example.sdk/BoardDesign_0_wrapper_hw_platform_0/system.hdf'.
+20:25:53 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279759071A"} -index 0' command is executed.
+20:25:54 INFO  : 'ps7_init' command is executed.
+20:25:54 INFO  : 'ps7_post_config' command is executed.
+20:25:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:25:54 INFO  : The application '/opt/Xilinx/Projects/VGA_example/VGA_example.sdk/vga_app/Debug/vga_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:25:54 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /opt/Xilinx/Projects/VGA_example/VGA_example.sdk/BoardDesign_0_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279759071A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279759071A" && level==0} -index 1
+fpga -file /opt/Xilinx/Projects/VGA_example/VGA_example.sdk/BoardDesign_0_wrapper_hw_platform_0/BoardDesign_0_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279759071A"} -index 0
+loadhw /opt/Xilinx/Projects/VGA_example/VGA_example.sdk/BoardDesign_0_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279759071A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279759071A"} -index 0
+dow /opt/Xilinx/Projects/VGA_example/VGA_example.sdk/vga_app/Debug/vga_app.elf
+----------------End of Script----------------
+
+20:25:54 INFO  : Memory regions updated for context APU
+20:25:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:25:55 INFO  : 'con' command is executed.
+20:25:55 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279759071A"} -index 0
+con
+----------------End of Script----------------
+
+20:26:26 INFO  : Disconnected from the channel tcfchan#1.
+20:26:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:26:26 INFO  : Sourcing of '/opt/Xilinx/Projects/VGA_example/VGA_example.sdk/BoardDesign_0_wrapper_hw_platform_0/ps7_init.tcl' is done.
+20:26:27 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279759071A"} -index 0' command is executed.
+20:26:27 INFO  : System reset is completed.
+20:26:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279759071A" && level==0} -index 1' command is executed.
+20:26:31 INFO  : FPGA configured successfully with bitstream "/opt/Xilinx/Projects/VGA_example/VGA_example.sdk/BoardDesign_0_wrapper_hw_platform_0/BoardDesign_0_wrapper.bit"
+20:26:32 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279759071A"} -index 0' command is executed.
+20:26:32 INFO  : Hardware design information is loaded from '/opt/Xilinx/Projects/VGA_example/VGA_example.sdk/BoardDesign_0_wrapper_hw_platform_0/system.hdf'.
+20:26:32 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279759071A"} -index 0' command is executed.
+20:26:33 INFO  : 'ps7_init' command is executed.
+20:26:33 INFO  : 'ps7_post_config' command is executed.
+20:26:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:26:34 INFO  : The application '/opt/Xilinx/Projects/VGA_example/VGA_example.sdk/vga_app/Debug/vga_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:26:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /opt/Xilinx/Projects/VGA_example/VGA_example.sdk/BoardDesign_0_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279759071A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279759071A" && level==0} -index 1
+fpga -file /opt/Xilinx/Projects/VGA_example/VGA_example.sdk/BoardDesign_0_wrapper_hw_platform_0/BoardDesign_0_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279759071A"} -index 0
+loadhw /opt/Xilinx/Projects/VGA_example/VGA_example.sdk/BoardDesign_0_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279759071A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279759071A"} -index 0
+dow /opt/Xilinx/Projects/VGA_example/VGA_example.sdk/vga_app/Debug/vga_app.elf
+----------------End of Script----------------
+
+20:26:34 INFO  : Memory regions updated for context APU
+20:26:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:26:34 INFO  : 'con' command is executed.
+20:26:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279759071A"} -index 0
+con
+----------------End of Script----------------
+
+20:27:36 INFO  : Disconnected from the channel tcfchan#2.
+20:27:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:27:36 INFO  : Sourcing of '/opt/Xilinx/Projects/VGA_example/VGA_example.sdk/BoardDesign_0_wrapper_hw_platform_0/ps7_init.tcl' is done.
+20:27:36 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279759071A"} -index 0' command is executed.
+20:27:36 INFO  : System reset is completed.
+20:27:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279759071A" && level==0} -index 1' command is executed.
+20:27:41 INFO  : FPGA configured successfully with bitstream "/opt/Xilinx/Projects/VGA_example/VGA_example.sdk/BoardDesign_0_wrapper_hw_platform_0/BoardDesign_0_wrapper.bit"
+20:27:41 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279759071A"} -index 0' command is executed.
+20:27:41 INFO  : Hardware design information is loaded from '/opt/Xilinx/Projects/VGA_example/VGA_example.sdk/BoardDesign_0_wrapper_hw_platform_0/system.hdf'.
+20:27:42 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279759071A"} -index 0' command is executed.
+20:27:42 INFO  : 'ps7_init' command is executed.
+20:27:42 INFO  : 'ps7_post_config' command is executed.
+20:27:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:27:43 INFO  : The application '/opt/Xilinx/Projects/VGA_example/VGA_example.sdk/vga_app/Debug/vga_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:27:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /opt/Xilinx/Projects/VGA_example/VGA_example.sdk/BoardDesign_0_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279759071A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279759071A" && level==0} -index 1
+fpga -file /opt/Xilinx/Projects/VGA_example/VGA_example.sdk/BoardDesign_0_wrapper_hw_platform_0/BoardDesign_0_wrapper.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279759071A"} -index 0
+loadhw /opt/Xilinx/Projects/VGA_example/VGA_example.sdk/BoardDesign_0_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zybo 210279759071A"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279759071A"} -index 0
+dow /opt/Xilinx/Projects/VGA_example/VGA_example.sdk/vga_app/Debug/vga_app.elf
+----------------End of Script----------------
+
+20:27:43 INFO  : Memory regions updated for context APU
+20:27:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:27:43 INFO  : 'con' command is executed.
+20:27:43 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279759071A"} -index 0
+con
+----------------End of Script----------------
+
+11:02:25 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.3/scripts/xsdb/xsdb/xsdb-server.tcl
+11:02:30 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.3/scripts/xsdb/xsdb/xsdb-server.tcl
+11:02:34 INFO  : XSDB server has started successfully.
+11:02:34 INFO  : XSDB server has started successfully.
+11:02:34 ERROR : Failed to call init_repo
+java.io.IOException: Command [C 1 xsdb eval "::hsi::utils::init_repo"] aborted
+	at org.eclipse.tcf.core.AbstractChannel$9.run(AbstractChannel.java:753)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:209)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:284)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345)
+	at java.io.FilterInputStream.read(FilterInputStream.java:107)
+	at org.eclipse.tcf.core.ChannelTCP.get(ChannelTCP.java:162)
+	at org.eclipse.tcf.core.StreamChannel.read(StreamChannel.java:84)
+	at org.eclipse.tcf.core.AbstractChannel$1.run(AbstractChannel.java:254)
+11:02:34 ERROR : Exception rasied in executing the command =Failed to call init_repo 
+11:02:34 INFO  : Processing command line option -hwspec C:/Xilinx/Projects/VGA_example/VGA_example.sdk/BoardDesign_0_wrapper.hdf.
+11:02:36 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.3/scripts/xsdb/xsdb/xsdb-server.tcl
+11:03:15 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.3/scripts/xsdb/xsdb/xsdb-server.tcl
+11:03:17 INFO  : XSDB server has started successfully.
+11:03:37 INFO  : Processing command line option -hwspec C:/Xilinx/Projects/VGA_example/VGA_example.sdk/BoardDesign_0_wrapper.hdf.
+11:05:36 ERROR : Timed out. 180 seconds have elapsed while waiting for XSDB server to launch.

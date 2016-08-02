@@ -1,0 +1,15 @@
+/*
+ * main.c
+ *
+ *  Created on: Apr 27, 2016
+ *      Author: scdl
+ */
+
+#include "xparameters.h"
+#include "VGA.h"
+#include "xil_mmu.h"
+#include "xil_assert.h"
+
+int main() {
+	return 0;
+}

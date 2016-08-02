@@ -1,0 +1,34 @@
+/*
+ * main.c
+ *
+ *  Created on: Apr 27, 2016
+ *      Author: scdl
+ */
+
+#include "xparameters.h"
+#include "VGA.h"
+#include "xil_mmu.h"
+#include "xil_assert.h"
+
+#define VGA_CONFIG_BASE_ADDRESS 	XPAR_VGA_0_S_AXI_CONFIG_BASEADDR
+#define VGA_FRAME_ADDRESS 			0x00200000
+#define VGA_MEMORY_ATTRIBUTE 		0x00010c06
+
+vga vga_obj;
+vga_frame vga_frame_obj;
+vga_pixel vga_pixel_obj;
+
+int main() {
+
+	/* Configure frame buffer memory to device. */
+	Xil_SetTlbAttributes(VGA_FRAME_ADDRESS,VGA_MEMORY_ATTRIBUTE);
+
+	/* Configure the vga object. */
+	vga_setup(&vga_obj,(uint32_t*)VGA_CONFIG_BASE_ADDRESS,(vga_frame*)VGA_FRAME_ADDRESS);
+
+	vga_frame_clear(&vga_frame_obj);
+
+	/* Spin on power save. */
+	while (1) asm ("WFE");
+	return 0;
+}
